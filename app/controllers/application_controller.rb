@@ -37,7 +37,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    user = User.find)by(:username => params[:username], :password => params[:password])
+    user = User.find_by(:username => params[:username], :password => params[:password])
     if user && user.authenticate(params[:password])
       erb :account
     else 
